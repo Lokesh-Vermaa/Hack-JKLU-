@@ -1,0 +1,20 @@
+{
+  "name": "hackjklu-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start-backend": "cd backend && npm start",
+    "start-frontend": "cd Frontend/security-scanner-dashboard && npm run dev",
+    "start-all": "npx concurrently \"npm run start-backend\" \"npm run start-frontend\"",
+    "stop-backend": "npx kill-port 5000",
+    "stop-frontend": "npx kill-port 3001",
+    "stop-all": "npx kill-port 5000 3001",
+    "restart-backend": "npm run stop-backend && npm run start-backend",
+    "restart-frontend": "npm run stop-frontend && npm run start-frontend",
+    "restart-all": "npm run stop-all && npm run start-all"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "kill-port": "^1.6.0"
+  }
+}
